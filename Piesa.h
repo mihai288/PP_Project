@@ -6,9 +6,11 @@
 #define PIESA_H
 
 
-
+#include <string>
+using namespace std;
 class Piesa {
-
+    string Nume;
+    double pret;
 };
 
 

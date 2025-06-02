@@ -3,3 +3,7 @@
 //
 
 #include "Reparatie.h"
+
+
+Reparatie::Reparatie(double pretPeOra, const vector<Piesa>& piese)
+    : pretPeOra(pretPeOra), piese(piese) {}
