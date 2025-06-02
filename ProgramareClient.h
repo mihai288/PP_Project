@@ -1,6 +1,3 @@
-//
-// Created by Mihai on 6/2/2025.
-//
 
 #ifndef PROGRAMARECLIENT_H
 #define PROGRAMARECLIENT_H
@@ -8,7 +5,7 @@
 #include <string>
 #include <iostream>
 
-#include "Reparatie.h"
+#include "Serviciu.h"
 #include "Masina.h"
 
 using namespace std;
@@ -19,11 +16,10 @@ class ProgramareClient {
     string luna;
     string zi;
     string ora;
-    string tipProgramare;
-    Reparatie reparatie;
+    Serviciu serviciu;
 
 public:
-    ProgramareClient(string an, string luna, string zi, string ora,string tipProgramare, int IDMasina, const Masina& masina, const Reparatie& reparatie);
+    ProgramareClient(string an, string luna, string zi, string ora, int IDMasina, const Masina& masina, const Serviciu& serviciu);
     bool verificareData(string an);
 
 };

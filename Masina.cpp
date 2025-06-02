@@ -7,3 +7,11 @@ Masina::Masina(int id, int CapacitateMotor, string Combustibil, string Marca, st
 string Masina::getNumeProprietar() const{
     return NumeProprietar;
 }
+
+int Masina::getCai() const{
+    return CaiPutere;
+}
+
+void Masina::setCai(const int CaiPutere) {
+    this->CaiPutere = CaiPutere;
+}

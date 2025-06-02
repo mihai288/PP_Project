@@ -19,8 +19,9 @@ class Masina {
 
 public:
     Masina(int id, int CapacitateMotor, string Combustibil, string Marca, string Model, int AnFabricatie, string nrInmatriculare, string NumeProprietar,int CaiPutere);
-
     string getNumeProprietar() const;
+    int getCai() const;
+    void setCai(const int CaiPutere);
 };
 
 
