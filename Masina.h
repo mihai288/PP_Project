@@ -1,30 +1,24 @@
-
-
 #ifndef MASINA_H
 #define MASINA_H
 
-
 #include <string>
-using namespace std;
+#include <iostream>
+
 class Masina {
+public:
     int IDMasina;
     int CapacitateMotor;
     int CaiPutere;
-    string Combustibil;
-    string Marca;
-    string Model;
+    std::string Combustibil;
+    std::string Marca;
+    std::string Model;
     int AnFabricatie;
-    string nrInmatriculare;
-    string NumeProprietar;
+    std::string nrInmatriculare;
+    std::string NumeProprietar;
 
-public:
-    Masina(int id, int CapacitateMotor, string Combustibil, string Marca, string Model, int AnFabricatie, string nrInmatriculare, string NumeProprietar,int CaiPutere);
-    string getNumeProprietar() const;
-    int getCai() const;
-    void setCai(const int CaiPutere);
+    Masina(int id, int capacitate, int caiPutere, std::string combustibil, std::string marca,
+           std::string model, int anFabricatie, std::string nrInmatriculare, std::string numeProprietar);
+    void afiseazaDetalii() const;
 };
 
-
-
-
-#endif //MASINA_H
+#endif // MASINA_H

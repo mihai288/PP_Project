@@ -1,28 +1,13 @@
-//
-// Created by Mihai on 6/2/2025.
-//
+#ifndef SERVICIU_H
+#define SERVICIU_H
 
-#ifndef REPARATIE_H
-#define REPARATIE_H
+#include <string>
 
-#include <vector>
-#include "Piesa.h"
 class Serviciu {
-    static const double pretPeOra;
-    vector<Piesa> piese;
-    string tipServiciu;
-
 public:
-    double costManopera() const;
-    double costPiese() const;
-    double costTotal() const;
-    Serviciu(string tipServiciu, const vector<Piesa>& piese);
-
+    virtual ~Serviciu() = default; // Virtual destructor
+    virtual void executa() = 0;
+    virtual std::string getTipServiciu() const = 0;
 };
 
-
-
-
-
-
-#endif //REPARATIE_H
+#endif // SERVICIU_H

@@ -1,15 +1,18 @@
-//
-// Created by Mihai on 6/2/2025.
-//
-
 #include "ProgramareClient.h"
-#include "Masina.h"
+#include <iostream>
 
-ProgramareClient::ProgramareClient(string an, string luna, string zi, string ora, int IDMasina, const Masina& masina, const Serviciu& serviciu)
-    : NumeProprietar(masina.getNumeProprietar()), an(an), luna(luna), zi(zi), ora(ora), IDMasina(IDMasina), serviciu(serviciu) {}
+ProgramareClient::ProgramareClient(Masina& m, Serviciu* s, std::string d, std::string o)
+    : masina(m), serviciu(s), data(d), ora(o) {}
 
-bool ProgramareClient::verificareData(string an) {
-    int anInt = stoi(an);
-    return anInt != 2025;
+ProgramareClient::~ProgramareClient() {
+    delete serviciu; // Deallocate the dynamically allocated service object
 }
 
+void ProgramareClient::afiseazaDetaliiProgramare() const {
+    std::cout << "--- Detalii Programare --- " << std::endl;
+    std::cout << "Data: " << data << ", Ora: " << ora << std::endl;
+    std::cout << "Masina: " << masina.Marca << " " << masina.Model << " (ID: " << masina.IDMasina << ")" << std::endl;
+    std::cout << "Tip Serviciu: " << serviciu->getTipServiciu() << std::endl;
+    serviciu->executa(); // Execute the service for demonstration
+    std::cout << "---------------------------" << std::endl;
+}

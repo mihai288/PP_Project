@@ -1,29 +1,22 @@
+#ifndef PROGRAMARE_CLIENT_H
+#define PROGRAMARE_CLIENT_H
 
-#ifndef PROGRAMARECLIENT_H
-#define PROGRAMARECLIENT_H
-
-#include <string>
-#include <iostream>
-
-#include "Serviciu.h"
 #include "Masina.h"
+#include "Serviciu.h"
+#include <string>
 
-using namespace std;
 class ProgramareClient {
-    string NumeProprietar;
-    int IDMasina;
-    string an;
-    string luna;
-    string zi;
-    string ora;
-    Serviciu serviciu;
+private:
+    Masina& masina;
+    Serviciu* serviciu;
+    std::string data;
+    std::string ora;
 
 public:
-    ProgramareClient(string an, string luna, string zi, string ora, int IDMasina, const Masina& masina, const Serviciu& serviciu);
-    bool verificareData(string an);
+    ProgramareClient(Masina& m, Serviciu* s, std::string d, std::string o);
+    ~ProgramareClient(); // Destructor to handle dynamic memory for Serviciu*
 
+    void afiseazaDetaliiProgramare() const;
 };
 
-
-
-#endif //PROGRAMARECLIENT_H
+#endif // PROGRAMARE_CLIENT_H
